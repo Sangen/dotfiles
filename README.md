@@ -2,6 +2,8 @@ dotfiles in Dropbox
 ======
 
 ```
+git clone git@github.com:Sangen/dotfiles.git ~/Dropbox/.dotfiles
+
 rm -rf ~/.vim
 rm ~/.vimrc
 rm ~/.gvimrc
