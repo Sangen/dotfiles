@@ -1,10 +1,12 @@
 set encoding=utf-8
 set nocompatible
 filetype off
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
- endif
+endif
 call neobundle#rc(expand('~/.vim/bundle'))
+
 " ここでプラグインをインストール
 " カラースキーマ変更用plugin「:Unite colorscheme」
 NeoBundle 'ujihisa/unite-colorscheme'
@@ -22,6 +24,13 @@ NeoBundle "https://github.com/helino/vim-json.git"
 
 filetype plugin indent on
 
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+    \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+endif
+
 let mapleader = ','
 noremap k gk
 noremap j gj
@@ -31,19 +40,22 @@ noremap <Up> gk
 noremap <Down> gj
 nnoremap <Leader>ev :tabnew $HOME/.vimrc<CR>
 nnoremap <Leader>rv :source $HOME/.vimrc<CR>
+syntax on
 set number
 set cursorline
 set list
 set listchars=eol:¬,tab:▸\ 
 set scrolloff=20
+set cindent
 "----------------------------------------
 " 「Tabキーを押すと, 自動的に半角スペース4つが挿入｣され,
 " その状態でバックスペースを押すと｢半角スペースが4つ削除」
 "----------------------------------------
 set smarttab
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 "----------------------------------------
 " カーソルを自動的に()の中へ
@@ -57,3 +69,13 @@ imap <> <><Left>
 " imap || ||<Left> " エラーになるので使用不可
 imap // //<left>
 imap /// ///<left>
+
+"----------------------------------------¬
+" 無限undo と編集位置の自動復帰
+"----------------------------------------¬
+if has('persistent_undo')
+    set undodir=~/.vim/undo
+    set undofile
+endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\""
+
