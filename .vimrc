@@ -1,19 +1,23 @@
 set encoding=utf-8
+" Save format
+set fileencoding=utf-8
+" Opem format
+set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp,default,latin
 set nocompatible
 filetype off
+filetype plugin indent off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
+  set nocompatible               " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-" ここでプラグインをインストール
-" カラースキーマ変更用plugin「:Unite colorscheme」
-NeoBundle 'ujihisa/unite-colorscheme'
+"Colorscheme"
 NeoBundle "https://github.com/tomasr/molokai.git"
-NeoBundle "https://github.com/vim-scripts/hybrid.vim"
-NeoBundle "https://github.com/altercation/vim-colors-solarized.git"
-" その他
+NeoBundle "https://github.com/w0ng/vim-hybrid.git"
+NeoBundle "https://github.com/nanotech/jellybeans.vim.git"
+
 NeoBundle "https://github.com/Lokaltog/vim-powerline.git"
 NeoBundle "https://github.com/tpope/vim-surround.git"
 NeoBundle "https://github.com/mattn/zencoding-vim.git"
@@ -22,14 +26,17 @@ NeoBundle "https://github.com/h1mesuke/unite-outline.git"
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
 NeoBundle "https://github.com/helino/vim-json.git"
 
-filetype plugin indent on
+filetype plugin indent on     " Required!
+"
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 " Installation check.
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-    \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-endif
+NeoBundleCheck
+
+
 
 let mapleader = ','
 noremap k gk
@@ -40,11 +47,10 @@ noremap <Up> gk
 noremap <Down> gj
 nnoremap <Leader>ev :tabnew $HOME/.vimrc<CR>
 nnoremap <Leader>rv :source $HOME/.vimrc<CR>
-syntax on
 set number
 set cursorline
 set list
-set listchars=eol:¬,tab:▸\ 
+set listchars=eol:¬,tab:▸\
 set scrolloff=20
 set cindent
 "----------------------------------------
@@ -66,16 +72,13 @@ imap () ()<Left>
 imap "" ""<Left>
 imap '' ''<Left>
 imap <> <><Left>
-" imap || ||<Left> " エラーになるので使用不可
 imap // //<left>
 imap /// ///<left>
 
-"----------------------------------------¬
-" 無限undo と編集位置の自動復帰
-"----------------------------------------¬
-if has('persistent_undo')
-    set undodir=~/.vim/undo
-    set undofile
-endif
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\""
+hi CursorLineNr guifg=#050505
 
+"colorscheme molokai
+"colorscheme hybrid
+colorscheme jellybeans
+
+syntax on

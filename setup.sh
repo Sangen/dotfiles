@@ -9,7 +9,7 @@ else
 fi
 
 
-DOT_FILES=( .gitignore .vimrc .gvimrc .bashrc .bash_profile )
+DOT_FILES=( .gitignore .vimrc .bashrc .bash_profile )
 
 CURRENT=$(cd $(dirname $0) && pwd)
 
