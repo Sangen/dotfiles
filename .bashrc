@@ -13,7 +13,7 @@ fi
 
 # Sublime Text
 if [ `uname` = 'Darwin' ]; then
-  alias st='open -a Sublime\ Text\ 2'
+  alias st='open -a Sublime\ Text'
 fi
 
 

@@ -7,4 +7,6 @@
 	ci = commit
 	st = status -s
 	br = branch
+    diffw = diff --color-words
+    graph = log --graph --decorate --oneline
 	hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
