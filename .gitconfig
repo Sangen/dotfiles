@@ -1,13 +1,13 @@
 [color]
-	ui = auto
+    ui = auto
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_global
+    editor = /usr/bin/vim
 [alias]
-	co = checkout
+    co = checkout
     cob = checkout -b
-	ci = commit
-	st = status -s
-	br = branch
-    diffw = diff --color-words
+    ci = commit
+    st = status -s
+    br = branch
     graph = log --graph --decorate --oneline
-	hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
+    hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
