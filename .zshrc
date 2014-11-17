@@ -1,7 +1,14 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
- 
- 
+
+
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
+
 # 色を使用出来るようにする
 autoload -Uz colors; colors
 
@@ -9,7 +16,6 @@ autoload -Uz colors; colors
 #
 # Keymap & Key Bindings
 #
-bindkey -v
 bindkey '^U' backward-kill-line
 # 履歴さかのぼり
 autoload history-search-end
@@ -19,9 +25,6 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 
-#
-# History
-$ cat .zshrc                                                                                   [~]
 # 環境変数
 export LANG=ja_JP.UTF-8
  
@@ -150,8 +153,6 @@ setopt no_beep
 setopt no_flow_control
 # '#' 以降をコメントとして扱う
 setopt interactive_comments
-# ディレクトリ名だけでcdする
-setopt auto_cd
 # cd したら自動的にpushdする
 setopt auto_pushd
 # 重複したディレクトリを追加しない
@@ -168,10 +169,6 @@ setopt hist_reduce_blanks
 setopt extended_glob
 # PROMPT変数内で変数参照する
 setopt prompt_subst
-
-
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
 
 
 #
