@@ -25,27 +25,6 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 
-# 環境変数
-export LANG=ja_JP.UTF-8
- 
- 
-# 色を使用出来るようにする
-autoload -Uz colors; colors
-
-
-#
-# Keymap & Key Bindings
-#
-bindkey -v
-bindkey '^U' backward-kill-line
-# 履歴さかのぼり
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-
-
 #
 # History
 #
@@ -166,7 +145,8 @@ setopt hist_ignore_space
 # ヒストリに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
 # 高機能なワイルドカード展開を使用する
-setopt extended_glob
+# HEAD^ などのコマンドパラメータと衝突するため一時削除
+#setopt extended_glob
 # PROMPT変数内で変数参照する
 setopt prompt_subst
 
