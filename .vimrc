@@ -8,22 +8,25 @@ filetype off
 filetype plugin indent off
 
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+  set nocompatible
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#begin(expand('~/.vim/bundle/'))
+
+if v:version >= 704
+  call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
+else
+  call neobundle#rc(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
+endif
+
 
 "Colorscheme"
-NeoBundle "https://github.com/tomasr/molokai.git"
-NeoBundle "https://github.com/sjl/badwolf.git"
 NeoBundle "https://github.com/nanotech/jellybeans.vim.git"
 
 NeoBundle "https://github.com/Lokaltog/vim-powerline.git"
 NeoBundle "https://github.com/tpope/vim-surround.git"
-" emmet-vimを使うようにする
-"NeoBundle "https://github.com/mattn/zencoding-vim.git"
 NeoBundle "https://github.com/Shougo/unite.vim.git"
 NeoBundle "https://github.com/Shougo/vimfiler.vim.git"
 NeoBundle "https://github.com/h1mesuke/unite-outline.git"
@@ -88,8 +91,8 @@ set smartcase
 set hlsearch
 set cindent
 "----------------------------------------
-" 「Tabキーを押すと, 自動的に半角スペース4つが挿入｣され,
-" その状態でバックスペースを押すと｢半角スペースが4つ削除」
+" 「Tabキーを押すと, 自動的に半角スペース2つが挿入｣され,
+" その状態でバックスペースを押すと｢半角スペースが2つ削除」
 "----------------------------------------
 set smarttab
 set expandtab
@@ -131,11 +134,9 @@ imap /// ///<left>
 
 hi CursorLineNr guifg=#050505
 
-"colorscheme molokai
-"colorscheme badwolf
-"colorscheme gruvbox
 colorscheme jellybeans
 set bg=light
 "set bg=dark
 
 syntax on
+
