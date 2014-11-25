@@ -12,14 +12,10 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-if v:version >= 704
-  call neobundle#begin(expand('~/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
-else
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  
+call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
-endif
+call neobundle#end()
 
 
 "Colorscheme"
