@@ -8,7 +8,6 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init -)"
 fi
 
-
 # 色を使用出来るようにする
 autoload -Uz colors; colors
 
@@ -226,7 +225,11 @@ fi
 if type ag > /dev/null 2>&1; then
   alias ag='ag --color-match 31 --color-path 4'
 fi
- 
+
+# Sublime to st
+alias st='open -a Sublime\ Text'
+
+
 # OS 別の設定
 case ${OSTYPE} in
     darwin*)
