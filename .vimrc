@@ -28,6 +28,8 @@ NeoBundle "https://github.com/Shougo/vimfiler.vim.git"
 NeoBundle "https://github.com/h1mesuke/unite-outline.git"
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
 NeoBundle "https://github.com/helino/vim-json.git"
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle "tomtom/tcomment_vim"
 NeoBundle 'sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'rking/ag.vim'
@@ -65,6 +67,9 @@ noremap <Down> gj
 nnoremap <Space>h ^
 nnoremap <Space>l $
 nnoremap <Space>p :call Paste_on_off()<CR>
+
+nnoremap ; :
+nnoremap : ;
 " タブ操作
 nnoremap <silent> tt  :<C-u>tabe<CR>
 nnoremap <C-p>  gT
@@ -96,6 +101,8 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+au BufNewFile,BufRead *.js set nowrap tabstop=4 shiftwidth=4
+au BufNewFile,BufRead *.jade set nowrap tabstop=2 shiftwidth=2
 
 "-------------------------------------------------
 " ユーザー定義関数
