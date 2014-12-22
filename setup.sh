@@ -9,7 +9,7 @@ else
 fi
 
 
-DOT_FILES=( .gitignore_global .vimrc .vrapperrc .zshrc .zshenv )
+DOT_FILES=( .gitignore_global .vimrc .vrapperrc .zshrc .zshenv .screenrc )
 
 CURRENT=$(cd $(dirname $0) && pwd)
 
