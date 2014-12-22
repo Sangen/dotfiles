@@ -101,6 +101,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+au BufNewFile,BufRead *.c set nowrap tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.js set nowrap tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.jade set nowrap tabstop=2 shiftwidth=2
 
