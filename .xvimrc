@@ -22,4 +22,10 @@ noremap : ;
 nnoremap [ %
 nnoremap ] %
 
-
+" カーソル設定
+imap {} {}<Left>
+imap [] []<Left>
+imap () ()<Left>
+imap "" ""<Left>
+imap '' ''<Left>
+imap <> <><Left>

@@ -67,6 +67,8 @@ noremap <Down> gj
 nnoremap <Space>h ^
 nnoremap <Space>l $
 nnoremap <Space>p :call Paste_on_off()<CR>
+" カーソル位置の単語をyankする
+nnoremap vv vawy
 
 nnoremap ; :
 nnoremap : ;
@@ -102,7 +104,7 @@ set softtabstop=2
 set shiftwidth=2
 
 au BufNewFile,BufRead *.c set nowrap tabstop=4 shiftwidth=4
-au BufNewFile,BufRead *.js set nowrap tabstop=4 shiftwidth=4
+" au BufNewFile,BufRead *.js set nowrap tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.jade set nowrap tabstop=2 shiftwidth=2
 
 "-------------------------------------------------
