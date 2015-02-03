@@ -230,6 +230,19 @@ fi
 # Sublime to st
 alias st='open -a Sublime\ Text'
 
+# MacVim
+case "$(uname)" in
+    Darwin)
+        if [[ -d /Applications/MacVim.app ]]; then
+            alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+            alias vi=vim
+            alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
+            alias view=/Applications/MacVim.app/Contents/MacOS/view
+        fi
+        ;;
+    *) ;;
+esac
+ 
 
 # OS 別の設定
 case ${OSTYPE} in
