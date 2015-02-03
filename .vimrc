@@ -33,6 +33,7 @@ NeoBundle "tomtom/tcomment_vim"
 NeoBundle 'sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'burnettk/vim-angular'
 
 filetype plugin indent on
 NeoBundleCheck
@@ -118,6 +119,7 @@ function! Paste_on_off()
     if g:paste_mode == 0
         set paste
         let g:paste_mode = 1
+        startinsert
     else
         set nopaste
         let g:paste_mode = 0
