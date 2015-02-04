@@ -230,6 +230,9 @@ fi
 # Sublime to st
 alias st='open -a Sublime\ Text'
 
+# MongoDB
+alias mongod-local='mongod --nojournal --noprealloc --dbpath'
+
 # MacVim
 case "$(uname)" in
     Darwin)

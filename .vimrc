@@ -28,12 +28,13 @@ NeoBundle "https://github.com/Shougo/vimfiler.vim.git"
 NeoBundle "https://github.com/h1mesuke/unite-outline.git"
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
 NeoBundle "https://github.com/helino/vim-json.git"
+NeoBundle 'burnettk/vim-angular'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle "tomtom/tcomment_vim"
 NeoBundle 'sudo.vim'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'burnettk/vim-angular'
 
 filetype plugin indent on
 NeoBundleCheck
