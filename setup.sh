@@ -8,6 +8,8 @@ else
   echo "set up .vim/bundle"
 fi
 
+mkdir ~/.vim/tmp ~/.vim/undo
+
 
 DOT_FILES=( .gitignore_global .vimrc .vrapperrc .xvimrc .zshrc .zshenv .screenrc )
 

@@ -68,7 +68,7 @@ noremap <Up> gk
 noremap <Down> gj
 nnoremap <Space>h ^
 nnoremap <Space>l $
-nnoremap <Space>p :call Paste_on_off()<CR>
+" nnoremap <Space>p :call Paste_on_off()<CR>
 " カーソル位置の単語をyankする
 nnoremap vv vawy
 
@@ -95,6 +95,9 @@ set ignorecase
 set smartcase
 set hlsearch
 set cindent
+set pastetoggle=<Space>p
+set backupdir=~/.vim/tmp
+set undodir=~/.vim/undo
 "----------------------------------------
 " 「Tabキーを押すと, 自動的に半角スペース2つが挿入｣され,
 " その状態でバックスペースを押すと｢半角スペースが2つ削除」
@@ -106,28 +109,7 @@ set softtabstop=2
 set shiftwidth=2
 
 au BufNewFile,BufRead *.c set nowrap tabstop=4 shiftwidth=4
-" au BufNewFile,BufRead *.js set nowrap tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.jade set nowrap tabstop=2 shiftwidth=2
-
-"-------------------------------------------------
-" ユーザー定義関数
-"-------------------------------------------------
-" Paste Mode
-" {{{
-let paste_mode = 0 " 0 = normal, 1 = paste
- 
-function! Paste_on_off()
-    if g:paste_mode == 0
-        set paste
-        let g:paste_mode = 1
-        startinsert
-    else
-        set nopaste
-        let g:paste_mode = 0
-    endif
-    return
-endfunc
-" }}}
 
 "----------------------------------------
 " カーソルを自動的に()の中へ
@@ -138,8 +120,6 @@ imap () ()<Left>
 imap "" ""<Left>
 imap '' ''<Left>
 imap <> <><Left>
-imap // //<left>
-imap /// ///<left>
 
 hi CursorLineNr guifg=#050505
 

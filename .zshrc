@@ -231,6 +231,7 @@ fi
 alias st='open -a Sublime\ Text'
 
 # MongoDB
+alias mongod-global='mongod --config /usr/local/etc/mongod.conf &'
 alias mongod-local='mongod --nojournal --noprealloc --dbpath'
 
 # MacVim
