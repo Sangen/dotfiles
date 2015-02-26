@@ -113,25 +113,6 @@ autocmd InsertLeave * set nopaste
 au BufNewFile,BufRead *.c set nowrap tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.jade set nowrap tabstop=2 shiftwidth=2
 
-"-------------------------------------------------
-" ユーザー定義関数
-"-------------------------------------------------
-" Paste Mode
-" {{{
-let paste_mode = 0 " 0 = normal, 1 = paste
-
-function! Paste_on_off()
-  if g:paste_mode == 0
-    set paste
-    let g:paste_mode = 1
-  else
-    set nopaste
-    let g:paste_mode = 0
-  endif
-  return
-endfunc
-" }}}
-
 "----------------------------------------
 " カーソルを自動的に()の中へ
 "----------------------------------------
