@@ -1,9 +1,5 @@
 {
-  "indent" : 2,      // インデント
   "camelcase":true,  // キャメルケース
-  "unused" : true,   // 宣言のみで使用していない変数を検出
   "eqeqeq":true,     // ==、!=の使用禁止
-  "undef" : true,    // グローバル変数へのアクセスを禁止
-  "strict": true,    // 全ての関数に対して、ECMAScript 5のstrict modeを求めるようになる。
   "devel" : true     // console、alertを許可
 }
