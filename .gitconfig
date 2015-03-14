@@ -14,4 +14,5 @@
     st = status -s
     br = branch
     graph = log --graph --decorate --oneline
+    gra = log --graph --decorate --oneline
     hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
