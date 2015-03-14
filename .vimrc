@@ -94,7 +94,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set cindent
-set pastetoggle=<Leader>p
+set pastetoggle=<F2>
 set backupdir=~/.vim/tmp
 set undodir=~/.vim/undo
 "----------------------------------------
