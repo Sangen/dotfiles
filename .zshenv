@@ -1,5 +1,12 @@
 export PATH=/usr/local/bin:$PATH
 
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
+
 if type vim > /dev/null 2>&1; then
   EDITOR=vim
 else
