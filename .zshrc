@@ -231,6 +231,9 @@ fi
 # Sublime to st
 alias st='open -a Sublime\ Text'
 
+# Visual Studio Code
+alias code='open -a Visual\ Studio\ Code'
+
 # MongoDB
 alias mongod-global='mongod --config /usr/local/etc/mongod.conf &'
 alias mongod-local='mongod --nojournal --noprealloc --dbpath'
