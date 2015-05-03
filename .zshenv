@@ -6,6 +6,8 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init -)"
 fi
 
+export PATH=/sbin:$PATH
+
 
 if type vim > /dev/null 2>&1; then
   EDITOR=vim
