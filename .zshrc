@@ -2,13 +2,18 @@
 export LANG=ja_JP.UTF-8
 
 
+export NODE_PATH='npm root -g'
+
 # Android Studio
 if [ -d $HOME/Library/Android ] ; then
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 fi
 
-
+# PostgreSQL
+if [ -d /usr/local/var/postgres ] ; then
+  export PGDATA=/usr/local/var/postgres
+fi
 
 # 色を使用出来るようにする
 autoload -Uz colors; colors
