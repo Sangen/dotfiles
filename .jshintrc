@@ -1,5 +1,9 @@
 {
-  "camelcase":true,  // キャメルケース
-  "eqeqeq":true,     // ==、!=の使用禁止
-  "devel" : true     // console、alertを許可
+  "eqeqeq": true,    // ==、!=の使用禁止
+  "devel": true,     // console、alertを許可
+  "validthis": true, // 関数のコンストラクタ以外でthisを許可(strict)
+  "undef": true,     // 定義されていない変数の使用を禁止
+  "strict": true,    // 全ての関数でstrictモード "use strict"; が有効
+  "jquery": true,    // jQueryで定義されているグローバルな要素の使用を許可
+  "node": true       // nodeで定義されているグローバルな要素の使用を許可
 }
