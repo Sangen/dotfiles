@@ -7,6 +7,7 @@ if [ -d $HOME/.anyenv ] ; then
 fi
 
 export PATH=/sbin:$PATH
+export PATH=/usr/sbin:$PATH
 
 
 if type vim > /dev/null 2>&1; then
