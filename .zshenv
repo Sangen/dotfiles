@@ -3,6 +3,7 @@ export PATH=/usr/local/bin:$PATH
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
+  export PATH="$HOME/.anyenv/envs/ndenv/shims:$PATH"
   eval "$(anyenv init -)"
 fi
 
