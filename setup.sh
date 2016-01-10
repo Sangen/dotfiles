@@ -22,7 +22,7 @@ fi
 mkdir ~/.vim/tmp ~/.vim/undo
 
 
-DOT_FILES=( .gitignore_global .vimrc .vrapperrc .xvimrc .zshrc .zshenv .jshintrc .screenrc )
+DOT_FILES=( .gitignore_global .vimrc .vrapperrc .xvimrc .zshrc .zshenv .jshintrc .screenrc .gibo-completion.zsh )
 
 CURRENT=$(cd $(dirname $0) && pwd)
 
