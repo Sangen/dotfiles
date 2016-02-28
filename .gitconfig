@@ -16,3 +16,7 @@
     graph = log --graph --decorate --oneline
     gra = log --graph --decorate --oneline
     hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
+[merge]
+    ff = false
+[pull]
+    ff = only
