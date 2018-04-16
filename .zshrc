@@ -15,6 +15,17 @@ if [ -d /usr/local/var/postgres ] ; then
   export PGDATA=/usr/local/var/postgres
 fi
 
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+  # tmux対応
+  for D in `\ls $HOME/.anyenv/envs`
+  do
+    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+  done
+fi
+
 # 色を使用出来るようにする
 autoload -Uz colors; colors
 
@@ -240,6 +251,10 @@ alias st='open -a Sublime\ Text'
 alias mongod-global='mongod --config /usr/local/etc/mongod.conf &'
 alias mongod-local='mongod --nojournal --noprealloc --dbpath'
 
+# OpemMP
+alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+
 # MacVim
 case "$(uname)" in
     Darwin)
@@ -252,7 +267,7 @@ case "$(uname)" in
         ;;
     *) ;;
 esac
- 
+
 
 # OS 別の設定
 case ${OSTYPE} in
@@ -266,7 +281,7 @@ case ${OSTYPE} in
         alias ls='ls -F --color=auto'
         ;;
 esac
- 
+
 # vim:set ft=zsh:
 
 
@@ -332,3 +347,4 @@ if [ -r ~/.zshrc.local ]; then
   . ~/.zshrc.local
 fi
 
+export PATH="/usr/local/sbin:$PATH"
