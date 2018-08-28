@@ -15,16 +15,10 @@ if [ -d /usr/local/var/postgres ] ; then
   export PGDATA=/usr/local/var/postgres
 fi
 
-# anyenv
-if [ -d $HOME/.anyenv ] ; then
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
-  # tmux対応
-  for D in `\ls $HOME/.anyenv/envs`
-  do
-    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-  done
-fi
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# BrewでインストールしたPython3を`python`デフォルトにする
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # 色を使用出来るようにする
 autoload -Uz colors; colors
