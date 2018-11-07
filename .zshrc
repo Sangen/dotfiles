@@ -2,6 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 export NODE_PATH='npm root -g'
 
 # Android Studio
