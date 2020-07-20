@@ -12,7 +12,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-  
+
 call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
 call neobundle#end()
@@ -71,8 +71,6 @@ nnoremap <Space>l $
 " カーソル位置の単語をyankする
 nnoremap vv vawy
 
-nnoremap ; :
-nnoremap : ;
 " タブ操作
 nnoremap <silent> tt  :<C-u>tabe<CR>
 nnoremap <C-p>  gT

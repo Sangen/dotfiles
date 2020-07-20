@@ -1,6 +1,7 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
-
+# git log のぺージャがlessで表示されていてutf-8に指定されていないと日本語が文字化けするため
+export LESSCHARSET=utf-8
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export NODE_PATH='npm root -g'
