@@ -10,19 +10,10 @@ do
   esac
 done
 
-
-if [ -a $HOME/.vim/bundle ]; then
-  echo ".vim/bundle is already exists."
-else
-  mkdir -p ~/.vim/bundle
-  git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-  echo "set up .vim/bundle"
-fi
-
-mkdir ~/.vim/tmp ~/.vim/undo
+mkdir ~/.vim/colors ~/.vim/undo
 
 
-DOT_FILES=( .gitignore_global .vimrc .vrapperrc .xvimrc .zshrc .zshenv .jshintrc .screenrc .gibo-completion.zsh )
+DOT_FILES=( .gitignore_global .vimrc .zshrc .zshenv )
 
 CURRENT=$(cd $(dirname $0) && pwd)
 
@@ -56,6 +47,6 @@ do
   else
     cp $CURRENT/$file $HOME/$file
     echo "$file copied"
-  fi 
+  fi
 done
 
