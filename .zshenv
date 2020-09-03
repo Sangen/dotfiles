@@ -1,24 +1,13 @@
-export PATH=/usr/local/bin:$PATH
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# anyenv
-if [ -d $HOME/.anyenv ] ; then
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  export PATH="$HOME/.anyenv/envs/ndenv/shims:$PATH"
-  eval "$(anyenv init -)"
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export PATH=/sbin:$PATH
-export PATH=/usr/sbin:$PATH
-
-
-if type vim > /dev/null 2>&1; then
-  EDITOR=vim
-else
-  EDITOR=vi
-fi
-export EDITOR
-
-if [ -r ~/.zshenv.local ]; then
-  . ~/.zshenv.local
-fi
-
+# Customize to your needs...

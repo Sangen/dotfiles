@@ -69,15 +69,15 @@ set ruler
 set laststatus=2
 set cursorline
 set list
-set listchars=eol:¬,tab:▸\
+"set listchars=eol:¬,tab:▸\
 set scrolloff=20
 set ignorecase
 set smartcase
 set hlsearch
 set undodir=~/.vim/undo
 set backspace=indent,eol,start
-"「Tabキーを押すと, 自動的に半角スペース2つが挿入｣され,
-"その状態でバックスペースを押すと｢半角スペースが2つ削除」
+"「Tabキーを押すと, 自動的に半角スペース4つが挿入｣され,
+"その状態でバックスペースを押すと｢半角スペースが4つ削除」
 set smarttab
 set expandtab
 set tabstop=4
@@ -94,7 +94,6 @@ set statusline^=%{coc#status()}
 "airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybrid'
-"let g:airline_theme = 'jellybeans'
 let g:airline#extensions#branch#enabled = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

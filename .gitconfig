@@ -1,22 +1,25 @@
-[filter "media"]
-    clean = git media clean %f
-    smudge = git media smudge %f
-    required = true
+[user]
 [color]
     ui = auto
 [core]
-    excludesfile = ~/.gitignore_global
     editor = /usr/bin/vim
+    excludesfile = ~/.gitignore_global
+    quotepath = false
+    autocrlf = false
 [alias]
     co = checkout
     cob = checkout -b
     ci = commit
     st = status -s
     br = branch
+    diffw = diff --word-diff
     graph = log --graph --decorate --oneline
-    gra = log --graph --decorate --oneline
-    hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
+    gra = graph
 [merge]
     ff = false
 [pull]
     ff = only
+[push]
+    default = current
+[credential]
+    helper = cache --timeout=86400

@@ -3,12 +3,12 @@
 # Prezto
 if [ -a $HOME/.zprezto ]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-  setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
 fi
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 
 
 # Command line options
@@ -21,31 +21,9 @@ do
   esac
 done
 
-mkdir ~/.vim/colors ~/.vim/undo
+mkdir -p ~/.vim/colors ~/.vim/undo
 
-
-DOT_FILES=( .gitignore_global .vimrc .zshrc .zshenv )
-
-CURRENT=$(cd $(dirname $0) && pwd)
-
-for file in ${DOT_FILES[@]}
-do
-  if [ -a $HOME/$file ]; then
-    if [ "$REPLACE" = "TRUE" ]; then
-      rm $HOME/$file
-      ln -s -n $CURRENT/$file $HOME/$file
-      echo "replace a symbolic link to $file"
-    else
-      echo "$file is already exists."
-    fi
-  else
-    ln -s -n $CURRENT/$file $HOME/$file
-    echo "made a symbolic link to $file"
-  fi
-done
-
-
-COPY_DOT_FILES=( .gitconfig )
+COPY_DOT_FILES=( .gitignore_global .gitconfig .vimrc )
 for file in ${COPY_DOT_FILES[@]}
 do
   if [ -a $HOME/$file ]; then
