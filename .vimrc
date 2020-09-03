@@ -69,7 +69,7 @@ set ruler
 set laststatus=2
 set cursorline
 set list
-"set listchars=eol:¬,tab:▸\
+set listchars=eol:¬,tab:▸\
 set scrolloff=20
 set ignorecase
 set smartcase

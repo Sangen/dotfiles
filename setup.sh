@@ -1,16 +1,5 @@
 #!/bin/sh
 
-# Prezto
-if [ -a $HOME/.zprezto ]; then
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-fi
-
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
-
 # Command line options
 # -r : replace dot files if these are already exist
 while getopts r OPT
@@ -23,7 +12,8 @@ done
 
 mkdir -p ~/.vim/colors ~/.vim/undo
 
-COPY_DOT_FILES=( .gitignore_global .gitconfig .vimrc )
+CURRENT=$(cd $(dirname $0) && pwd)
+COPY_DOT_FILES=( .gitignore_global .gitconfig .vimrc .zshrc.local )
 for file in ${COPY_DOT_FILES[@]}
 do
   if [ -a $HOME/$file ]; then
@@ -38,4 +28,3 @@ do
     echo "$file copied"
   fi
 done
-
