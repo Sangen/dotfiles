@@ -44,6 +44,9 @@ alias ls="ls -G -w"
 alias la="ls -a"
 alias ll="ls -l"
 
+# 補完
+autoload -U compinit && compinit
+
 
 #
 # Theme - Pure
