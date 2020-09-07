@@ -6,6 +6,12 @@
 chsh -s $(which zsh)
 ```
 
+## Update and upgrade Homebrew (Mac)
+
+```console
+brew upgrade
+```
+
 ## Set up dotfiles
 
 ```console
@@ -44,9 +50,28 @@ git config --global user.name "User Name"
 git config --global user.email "example@mail.com"
 ```
 
+## Peco
+
+Install [peco](https://github.com/peco/peco)
+
+For Mac
+
+```console
+brew install peco
+```
+
 ## Font
 
 Use Powerline font such as `Ricty for Powerline`.
+
+e.g.) Install Ricty for Powerline by Homebrew
+
+```console
+brew tap sanemat/font
+brew install ricty --with-powerline
+cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -vf
+```
 
 ## Vim
 
