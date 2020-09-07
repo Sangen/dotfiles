@@ -104,7 +104,7 @@ zinit light zsh-users/zsh-autosuggestions
 
 
 # anyenv
-[ -f ~/.anyenv/bin/anyenv ] && eval "$(anyenv init -)"
+type anyenv > /dev/null 2>&1 && eval "$(anyenv init -)"
 
 
 # Load local zshrc
