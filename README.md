@@ -48,7 +48,25 @@ git config --global user.email "example@mail.com"
 
 Use Powerline font such as `Ricty for Powerline`.
 
-## Keyboard Bindings
+## Vim
+
+Run vim and install plugins.
+
+### CoC
+
+Using [coc.nvim](https://github.com/neoclide/coc.nvim)
+
+You have to install coc extension or configure language servers for LSP support.
+
+e.g.) You can install extensions for JSON, TypeScript and Python as follows:
+
+```vim
+:CocInstall coc-json coc-tsserver coc-python
+```
+
+---
+
+## Prompt Keyboard Bindings
 
 | Key | Action |
  --- | ---
