@@ -13,7 +13,25 @@ done
 mkdir -p ~/.vim/colors ~/.vim/undo
 
 CURRENT=$(cd $(dirname $0) && pwd)
-COPY_DOT_FILES=( .gitignore_global .gitconfig .vimrc .zshrc.local )
+
+SYMBOLIC_LINK_DOT_FILES=( .gitignore_global .vimrc .zshrc .zshenv )
+for file in ${SYMBOLIC_LINK_DOT_FILES[@]}
+do
+  if [ -a $HOME/$file ]; then
+    if [ "$REPLACE" = "TRUE" ]; then
+      rm $HOME/$file
+      ln -s -n $CURRENT/$file $HOME/$file
+      echo "replace a symbolic link to $file"
+    else
+      echo "$file is already exists."
+    fi
+  else
+    ln -s -n $CURRENT/$file $HOME/$file
+    echo "made a symbolic link to $file"
+  fi
+done
+
+COPY_DOT_FILES=( .gitconfig .zshrc.local )
 for file in ${COPY_DOT_FILES[@]}
 do
   if [ -a $HOME/$file ]; then
@@ -28,3 +46,5 @@ do
     echo "$file copied"
   fi
 done
+
+exec $SHELL -l
