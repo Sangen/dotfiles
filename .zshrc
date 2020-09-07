@@ -103,10 +103,8 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-autosuggestions
 
 
-#
 # anyenv
-#
-eval "$(anyenv init -)"
+[ -f ~/.anyenv/bin/anyenv ] && eval "$(anyenv init -)"
 
 
 # Load local zshrc
