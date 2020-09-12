@@ -107,5 +107,11 @@ zinit light zsh-users/zsh-autosuggestions
 type anyenv > /dev/null 2>&1 && eval "$(anyenv init -)"
 
 
+# pipenv
+# プロジェクト直下にvenv仮想環境を作る設定を有効化
+# この設定を行わない場合は、`~/.local/share/virtualenvs/{ProjectName}{Random}`に生成される
+export PIPENV_VENV_IN_PROJECT=1
+
+
 # Load local zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
