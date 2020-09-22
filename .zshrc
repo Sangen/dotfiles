@@ -104,7 +104,7 @@ zinit light zsh-users/zsh-autosuggestions
 
 
 # anyenv
-type anyenv > /dev/null 2>&1 && eval "$(anyenv init -)"
+type anyenv > /dev/null 2>&1 && eval "$(anyenv init - --no-rehash)"
 
 
 # pipenv
@@ -115,3 +115,10 @@ export PIPENV_VENV_IN_PROJECT=1
 
 # Load local zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+
+# # 処理時間プロファイル(.zshenvの記述もコメント解除する必要あり)
+# # $ time ( zsh -i -c exit ) をターミナルで実行
+# if (which zprof > /dev/null 2>&1) ;then
+#   zprof
+# fi
