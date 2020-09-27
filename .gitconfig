@@ -9,7 +9,7 @@
 [alias]
     co = checkout
     cob = checkout -b
-    ci = commit
+    cot = checkout -t
     st = status -s
     br = branch
     diffw = diff --word-diff
