@@ -15,6 +15,8 @@
     diffw = diff --word-diff
     graph = log --graph --decorate --oneline
     gra = graph
+[diff]
+    tool = vimdiff
 [merge]
     ff = false
 [pull]
