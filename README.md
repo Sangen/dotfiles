@@ -97,3 +97,14 @@ e.g.) You can install extensions for JSON, TypeScript and Python as follows:
  --- | ---
 | `Ctrl + B` | Search a destination from `cdr` list and cd the destination |
 | `Ctrl + R` | Search command history |
+
+---
+
+## Helpers
+
+### Clean `cdr` no exists directories
+
+``` sh
+chmod +x ~/.dotfiles/cdr-recent-dirs-clean.sh
+sh ~/.dotfiles/cdr-recent-dirs-clean.sh
+```
