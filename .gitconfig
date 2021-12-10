@@ -19,6 +19,8 @@
     tool = vimdiff
 [merge]
     ff = false
+[fetch]
+    prune = true
 [pull]
     ff = only
 [push]
