@@ -89,6 +89,14 @@ e.g.) You can install extensions for JSON, TypeScript and Python as follows:
 :CocInstall coc-json coc-tsserver coc-python
 ```
 
+### Update Vim Plugins
+
+Run `:PlugUpdate` to update the plugins.
+
+```vim
+:PlugUpdate
+```
+
 ---
 
 ## Prompt Keyboard Bindings
