@@ -6,6 +6,7 @@
     excludesfile = ~/.gitignore_global
     quotepath = false
     autocrlf = false
+    ignorecase = false
 [alias]
     co = checkout
     cob = checkout -b
@@ -28,4 +29,4 @@
 [credential]
     helper = cache --timeout=86400
 [init]
-	defaultBranch = main
+    defaultBranch = main
