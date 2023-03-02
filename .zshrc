@@ -105,7 +105,7 @@ zinit light zsh-users/zsh-autosuggestions
 
 
 # anyenv
-type anyenv > /dev/null 2>&1 && eval "$(anyenv init - --no-rehash)"
+# type anyenv > /dev/null 2>&1 && eval "$(anyenv init - --no-rehash)"
 
 
 # pipenv
