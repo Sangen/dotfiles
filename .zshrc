@@ -70,6 +70,10 @@ alias ls="ls -G -w"
 alias la="ls -a"
 alias ll="ls -l"
 
+# trash (https://formulae.brew.sh/formula/trash) のrmエイリアス
+if type trash > /dev/null 2>&1; then
+    alias rm='trash -F'
+fi
 
 #
 # Theme - Pure
