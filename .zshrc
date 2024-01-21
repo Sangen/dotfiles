@@ -108,9 +108,8 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-autosuggestions
 
 
-# anyenv
-# type anyenv > /dev/null 2>&1 && eval "$(anyenv init - --no-rehash)"
-
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # pipenv
 # プロジェクト直下にvenv仮想環境を作る設定を有効化
