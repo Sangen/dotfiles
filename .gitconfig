@@ -15,7 +15,8 @@
     br = branch
     diffw = diff --word-diff
     graph = log --graph --decorate --oneline
-    gra = graph
+    graph2 = "log --graph --date=short --pretty=\"format:%C(auto)%h %C(cyan)%ad %C(auto)%s%C(auto)%d %C(#777777)<%an>\""
+    gra = graph2
 [diff]
     tool = vimdiff
 [merge]
